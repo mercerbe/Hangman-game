@@ -37,11 +37,13 @@ options:
 <body>
   <div class="wrapper">
     <div class="header">
-      <h1>HANGMAN</h1>
-      <h2>Guess The Word To Save Indy!</h2>
+      <h1>Indiana Jones Hangman Game</h1>
+      <h2>Crack The Code To Save Indy!</h2>
+      <p>Instructions: guess letters to figure out the word</p>
     </div>
-    <div id="timer">
-      <p>Timer</p>
+    <div class="timer">
+      <p><strong>Timer:</strong></p>
+      <p id="gameTimer"></p>
     </div>
 
     <br>
@@ -50,14 +52,20 @@ options:
       <div id="gameArea">
         <img src="" alt="">
         <section class="score">
-          <p id="wins">Wins: </p>
-          <p id="losses">Losses: </p>
+          <p><strong>Wins: </strong></p>
+          <p id="wins"></p>
+          <p><strong>Losses: </strong></p>
+          <p id="losses"></p>
         </section>
         <section class="gameInfo">
-        <p id="guessesLeftNormal"> Guesses Remaining: </p>
-        <p id="normalAnswer"></p>
-        <p id="currentGuess"></p>
-        <p id="guessesMade"></p>
+          <p><strong>Guesses Left:</strong></p>
+          <p id="guessesLeftNormal"></p>
+          <p><strong>Code to Crack:</strong></p>
+          <p id="normalAnswer"></p>
+          <p><strong>Current Guess:</strong></p>
+          <p id="currentGuess"></p>
+          <p><strong>Guesses Made:</strong></p>
+          <p id="guessesMade"></p>
         </section>
       </div>
 

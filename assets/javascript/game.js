@@ -47,7 +47,7 @@ function confirmGameOver() {
   return guessesLeftNormal === 0 || gameTimer === 0 || normalAnswer.indexOf("_") === -1;
 };
 
-function 
+
 
 
 
