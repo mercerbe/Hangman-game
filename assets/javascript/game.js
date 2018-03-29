@@ -88,9 +88,9 @@ function startTimer(duration, display) {
 };
 
 window.onload = function () {
-  var fiveMinutes = 60 * 5;
+  var twoMinutes = 60 * 2;
     display = document.querySelector("#timer")
-    startTimer(fiveMinutes, display);
+    startTimer(twoMinutes, display);
 };
 
 /*function getAlphabet() {
