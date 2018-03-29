@@ -28,6 +28,7 @@ document.getElementById("guessesLeftNormal").innerHTML = guessesLeftNormal;
 document.getElementById("normalAnswer").innerHTML = normalAnswer.join(" ");
 document.getElementById("currentGuess").innerHTML = currentGuess;
 document.getElementById("guessesMade").innerHTML = guessesMade;
+document.getElementById("startButton")
 
 //Console information
 console.log(hangmanWordNormal);
@@ -49,12 +50,19 @@ function gameOver() {
     losses++;
     alert("Out Of Time! Couldn't Crack The Code! Indy Didn't Escape With The Artifact!")
   };
-  restartGame();
 };
 
 function confirmGameOver() {
-  return guessesLeftNormal === 0 || gameTimer === 0 || normalAnswer.indexOf("_") === -1;
+  return guessesLeftNormal === 0 || timer === 0 || normalAnswer.indexOf("_") === -1;
 };
+
+function restartGame() {
+  guessesLeftNormal;
+  guessesMade = [];
+  currentGuess = null;
+  normalAnswer;
+  startTimer();
+}
 
 function confirmLetter(letter) {
   return alphabet.indexOf(letter) > -1;
@@ -70,6 +78,7 @@ function startGame() {
   guessesMade = [];
   currentGuess = null;
   normalAnswer;
+  startTimer();
 };
 
 function startTimer(duration, display) {
@@ -87,10 +96,14 @@ function startTimer(duration, display) {
 
 };
 
-window.onload = function () {
+function timer() {
   var twoMinutes = 60 * 2;
     display = document.querySelector("#timer")
     startTimer(twoMinutes, display);
+};
+
+function guessWord() {
+
 };
 
 /*function getAlphabet() {
@@ -100,9 +113,11 @@ window.onload = function () {
     }
     return alphabetArray;
 }*/
+window.onload = timer();
 
 document.onkeyup = function(event) {
   var currentGuess = String.fromCharCode(event.keyCode).toLowerCase();
+  console.log(currentGuess);
 
     if (guessesMade.indexOf(currentGuess) < 0 && normalAnswer.indexOf(currentGuess) >= 0){
   guessesMade[guessesMade.length] = currentGuess;
@@ -110,6 +125,7 @@ document.onkeyup = function(event) {
   };
 
 };
+
 
 
 
