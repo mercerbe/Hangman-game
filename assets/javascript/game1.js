@@ -2,7 +2,7 @@
 var wins = 0;
 var losses = 0;
 var alphabet = ("abcdefghijklmnopqrstuvwxyz").split("");
-var wordArray = ("adult scrawny live handle possess babies afraid powerful yard talk guitar dare knock trade cabbage undress swim lush gold vulgar doubt harsh zebra fireman pest potato powder butter screw strong riddle unable plane").split(" ");
+var wordArray = ("adult scrawny live handle possess babies afraid powerful yard talk guitar dare knock trade cabbage undress swim lush gold vulgar doubt harsh zebra fireman pest potato powder butter screw strong riddle unable plane smiling diligent victorious scribble tranquil momentous concentrate beneficial butterfly island mundane powerful foregoing unadvised imported alluring innate physical quilt stereotyped unequaled intend arrogant numberless degree apparatus").split(" ");
 var chosenWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 var allowedGuesses = Math.trunc(chosenWord.length * 2);
 var correctGuesses;
@@ -68,14 +68,17 @@ function checkWin() {
 };
 
 function guessWord() {
-  prompt("What's the Word?");
-  if (prompt = chosenWord) {
-    alert("Correct!");
+  var wordGuess = prompt("What's the Word?");
+  if (wordGuess === chosenWord) {
+    window.confirm("Correct!");
     wins++;
-  } else {
-    alert("Incorrect! You Lose!");
+    startGame();
+  }else {
+    window.confirm("Incorrect!");
     losses++;
+    startGame();
   }
+
 }
 
 document.onkeyup = function(event) {
