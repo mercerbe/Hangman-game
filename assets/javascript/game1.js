@@ -7,6 +7,7 @@ var chosenWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 var allowedGuesses = Math.trunc(chosenWord.length * 2);
 var correctGuesses;
 var wrongGuesses;
+var timeleft = 100;
 
 //Elements
 var wordElement = document.getElementById("word");
@@ -14,13 +15,14 @@ var letterCountElement = document.getElementById("currentGuess");
 var lettersGuessedElement = document.getElementById("guessesMade");
 document.getElementById("wins").innerHTML = wins;
 document.getElementById("losses").innerHTML = losses;
-startButton.addEventListener("click", startGame, false);
+startButton.addEventListener("click", startGame, timer,  false);
 startButton.style.cursor = "pointer";
 guessButton.addEventListener("click", guessWord, false);
 guessButton.style.cursor = "pointer";
 newWordButton.addEventListener("click", startGame, false);
 newWordButton.style.cursor = "pointer";
 resetButton.style.cursor = "pointer";
+document.getElementById("timer").innerHTML = timer;
 
 //Functions
 function startGame() {
@@ -93,11 +95,13 @@ function newWord(){
   //keeps timer going but picks new word and resets guessesleft, incorrect guesses
 }
 
-function timer() {
-  //timer starts on start Game button press or when startgame() is run
-}
+var downloadTimer = setInterval(function(){
+  document.getElementById("timer").value = 100 - --timeleft;
+  if (timeleft <= 0)
+    clearInterval(downloadTimer);
+},1000);
 
-
+//gameEvents
 document.onkeyup = function(event) {
   var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
   document.getElementById("currentLetter").innerHTML = letterGuessed;
