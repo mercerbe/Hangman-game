@@ -46,6 +46,7 @@ function startGame() {
     if (timeleft <= 0)
       clearInterval(downloadTimer);
   },1000);
+
 };
 
 function updateGuesses(letter) {
@@ -71,12 +72,15 @@ function updateGuesses(letter) {
 
 function checkWin() {
   if (correctGuesses.indexOf("_") === -1) {
+    setTimeout(function(){alert("Correct! Indy Escaped With The Artifact!");}, 300);
     wins++;
-    alert("Correct! Indy Escaped With The Artifact!");
+    document.getElementById("wins").innerHTML = wins;
     startGame();
+    console.log(wins);
   }else if (allowedGuesses === 0) {
+    setTimeout(function(){alert("Out Of Guesses! Indy Didn't Escape!");}, 300);
     losses++;
-    alert("Out Of Guesses! Indy Didn't Escape!");
+    document.getElementById("losses").innerHTML = losses;
     startGame();
   };
 };
@@ -86,10 +90,12 @@ function guessWord() {
   if (wordGuess === chosenWord) {
     window.confirm("Correct! Code Cracked and Indy Escaped!");
     wins++;
+    document.getElementById("wins").innerHTML = wins;
     startGame();
   }else {
     window.confirm("Incorrect! Indy Didn't Escape With The Artifact!");
     losses++;
+    document.getElementById("losses").innerHTML = losses;
     startGame();
   };
 
