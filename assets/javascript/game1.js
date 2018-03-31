@@ -72,11 +72,11 @@ function updateGuesses(letter) {
 function checkWin() {
   if (correctGuesses.indexOf("_") === -1) {
     wins++;
-    alert("You Won!");
+    alert("Correct! Indy Escaped With The Artifact!");
     startGame();
   }else if (allowedGuesses === 0) {
     losses++;
-    alert("You Lost");
+    alert("Out Of Guesses! Indy Didn't Escape!");
     startGame();
   };
 };
@@ -84,11 +84,11 @@ function checkWin() {
 function guessWord() {
   var wordGuess = prompt("What's the Word?");
   if (wordGuess === chosenWord) {
-    window.confirm("Correct!");
+    window.confirm("Correct! Code Cracked and Indy Escaped!");
     wins++;
     startGame();
   }else {
-    window.confirm("Incorrect!");
+    window.confirm("Incorrect! Indy Didn't Escape With The Artifact!");
     losses++;
     startGame();
   };
