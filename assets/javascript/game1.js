@@ -40,16 +40,20 @@ function startGame() {
 
   wordElement.innerHTML = correctGuesses.join(" ");
   letterCountElement.innerHTML = allowedGuesses;
+
+  var downloadTimer = setInterval(function(){
+    document.getElementById("timer").value = 100 - --timeleft;
+    if (timeleft <= 0)
+      clearInterval(downloadTimer);
+  },1000);
 };
 
 function updateGuesses(letter) {
   if (wrongGuesses.indexOf(letter) < 0 && alphabet.indexOf(letter) >= 0) {
-  //wrongGuesses[wrongGuesses.length] = letter;
   allowedGuesses--;
 }else {
   alert("Already Guessed " + letter + " , No Guesses Subtracted");
 };
-  //allowedGuesses--;
   letterCountElement.innerHTML = allowedGuesses;
 
   if (chosenWord.indexOf(letter) === -1) {
@@ -95,11 +99,7 @@ function newWord(){
   //keeps timer going but picks new word and resets guessesleft, incorrect guesses
 }
 
-var downloadTimer = setInterval(function(){
-  document.getElementById("timer").value = 100 - --timeleft;
-  if (timeleft <= 0)
-    clearInterval(downloadTimer);
-},1000);
+
 
 //gameEvents
 document.onkeyup = function(event) {
@@ -107,6 +107,7 @@ document.onkeyup = function(event) {
   document.getElementById("currentLetter").innerHTML = letterGuessed;
   updateGuesses(letterGuessed);
   setTimeout(function() {checkWin(); }, 500);
+
 };
 
 
