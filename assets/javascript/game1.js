@@ -41,7 +41,13 @@ function startGame() {
 };
 
 function updateGuesses(letter) {
+  if (wrongGuesses.indexOf(letter) < 0 && alphabet.indexOf(letter) >= 0) {
+  //wrongGuesses[wrongGuesses.length] = letter;
   allowedGuesses--;
+}else {
+  alert("Already Guessed " + letter)
+};
+  //allowedGuesses--;
   letterCountElement.innerHTML = allowedGuesses;
 
   if (chosenWord.indexOf(letter) === -1) {
@@ -61,9 +67,11 @@ function checkWin() {
   if (correctGuesses.indexOf("_") === -1) {
     wins++;
     alert("You Won!");
+    startGame();
   }else if (allowedGuesses === 0) {
     losses++;
-    alert("You Lost")
+    alert("You Lost");
+    startGame();
   };
 };
 
@@ -77,17 +85,31 @@ function guessWord() {
     window.confirm("Incorrect!");
     losses++;
     startGame();
-  }
+  };
 
+};
+
+function newWord(){
+  //keeps timer going but picks new word and resets guessesleft, incorrect guesses
 }
+
+function timer() {
+  //timer starts on start Game button press or when startgame() is run
+}
+
 
 document.onkeyup = function(event) {
   var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+  document.getElementById("currentLetter").innerHTML = letterGuessed;
   updateGuesses(letterGuessed);
   checkWin();
 };
 
-//startGame();
+
+
+
+
+
 
 
 
