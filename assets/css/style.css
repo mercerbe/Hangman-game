@@ -23,7 +23,16 @@ img{
 
 }
 
-
+#instructions,
+#timer,
+#wins,
+#losses,
+#word,
+#currentGuess,
+#currentLetter,
+#guessesMade {
+  color: #b1604b;
+}
 
 .gameInfo {
   clear: both;
@@ -55,5 +64,6 @@ footer {
   bottom: 0;
   left: 0;
   background-color: black;
+  color: #b1604b;
   padding: 1% 0 1% 0;
 }
