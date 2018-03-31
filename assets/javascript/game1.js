@@ -102,7 +102,7 @@ document.onkeyup = function(event) {
   var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
   document.getElementById("currentLetter").innerHTML = letterGuessed;
   updateGuesses(letterGuessed);
-  checkWin();
+  setTimeout(function() {checkWin(); }, 1000);
 };
 
 
