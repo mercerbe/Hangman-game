@@ -45,7 +45,7 @@ function updateGuesses(letter) {
   //wrongGuesses[wrongGuesses.length] = letter;
   allowedGuesses--;
 }else {
-  alert("Already Guessed " + letter)
+  alert("Already Guessed " + letter + " , No Guesses Subtracted");
 };
   //allowedGuesses--;
   letterCountElement.innerHTML = allowedGuesses;

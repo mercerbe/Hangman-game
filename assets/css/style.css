@@ -11,6 +11,7 @@ body {
   background-image:url("../images/indianaJonesBackground2.png");
   color: white;
   text-align: center;
+  font-family: 'Bungee Inline', cursive;
 }
 
 img{
@@ -22,8 +23,30 @@ img{
 
 }
 
+
+
+.gameInfo {
+  clear: both;
+}
+
 .buttonArea {
   margin-bottom: 5%;
+}
+
+.gameButtons {
+  padding: 10px 5px;
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Bungee Inline', cursive;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.gameButtons:hover {
+  background-color: #b1604b;
+  border: none;
+  font-family: 'Bungee Inline', cursive;
 }
 
 footer {
