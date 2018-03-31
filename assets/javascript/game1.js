@@ -41,7 +41,7 @@ function startGame() {
   wordElement.innerHTML = correctGuesses.join(" ");
   letterCountElement.innerHTML = allowedGuesses;
 
-  var downloadTimer = setInterval(function(){
+  var downloadTimer = setInterval(function timer(){
     document.getElementById("timer").value = 100 - --timeleft;
     if (timeleft <= 0)
       clearInterval(downloadTimer);
@@ -122,4 +122,7 @@ document.onkeyup = function(event) {
 
 
 
-//
+//notes
+//wins-losses not logged poperly
+//alert when correct letter is pressed again and don't take away guess
+//timer restart on guess word win/loss
