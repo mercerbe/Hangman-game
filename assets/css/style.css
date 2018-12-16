@@ -1,6 +1,6 @@
 html{
   box-sizing: border-box;
-  background: url(../images/indianaJonesBackground1.jpg) no-repeat center center fixed; 
+  background: url(../images/indy_bg.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -57,9 +57,9 @@ img{
   color: #b1604b;
 }
 
-.buttonArea {
+/* .buttonArea {
   margin-bottom: 5%;
-}
+} */
 
 .gameButtons {
   padding: 10px 5px;
@@ -78,13 +78,9 @@ img{
   color: whitesmoke;
 }
 
-
 .row {
   text-align:center;
   margin:0 0 15px;
-}
-.row.spacebar input{
-  padding:10px 150px;
 }
 input[type='button']{
   padding:10px 20px;

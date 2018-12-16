@@ -10,30 +10,6 @@
   <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>Hangman Game</title>
-  <!-- TODO: pseudocode:
-- create variables: word array, wins, losses, guesses left, guesses made, current guess, computer word
-- create array that randomly selects a word and stores it (all words should be about the same length for this game)
-- display the length of the word to players
-- prompt user to guess a letter
-- onkeyup user selects letter start game function:
-- lowercase letter selection
-- reference letter against previous guesses, if already guessed don't count guess/alert player
-- after referenced:
-   if guess is correct (look up code for how to reference guess/letter agianst a word):
-      - letter is displayed in correct location
-      -add letter to guesses made array
-  if guess is incorrect:
-    -reduce guesses left by 1 (draw part of hangman...)
-    -add letter to guesses made array
-    -alert something here
-  if guesses left === 0
-    -player loses, game restarts
-options:
-  button for if player knows the word and wants to finish the game (if incorrect, auto-lose/restart)
-  button to restart game/choose new word
-  button for harder words (2 sets of arrays at the begining that are chosen on start)
-
-  ---->
 </head>
 
 <body>
@@ -49,7 +25,6 @@ options:
     <div class="wrapper">
     <div class="container">
       <div id="gameArea">
-        <img src="assets/images/indiana-banner.jpg" alt="indyPic">
         <div class="gameTimer">
           <p><strong>Timer:</strong></p>
           <progress value="0" max="50" id="timer"></progress>
@@ -83,24 +58,8 @@ options:
   <br>
 
   <!-- keyboard for mobile -->
-  <!-- <div class="output">
-    <input type="text" name="output" id="output" placeholder="Virtual Keyboard">
-  </div> -->
   
   <div class="mobile-keyboard">
-    <div class="row">
-      <input type="button" value="1">
-      <input type="button" value="2">
-      <input type="button" value="3">
-      <input type="button" value="4">
-      <input type="button" value="5">
-      <input type="button" value="6">
-      <input type="button" value="7">
-      <input type="button" value="8">
-      <input type="button" value="9">
-      <input type="button" value="0">
-      <input type="button" value="delete" class="delete">
-    </div>
     <div class="row">
       <input type="button" value="q">
       <input type="button" value="w">
@@ -132,15 +91,11 @@ options:
       <input type="button" value="b">
       <input type="button" value="n">
       <input type="button" value="m">
-      <input type="button" value="shift" class="shift">
-    </div>
-    <div class="row spacebar">
-      <input type="button" value=" ">
     </div>
   </div>
 </div>
 
-
+  <br>
 
   <footer>&copyBenMercerCodes</footer>
   <script type="text/javascript" src="assets/javascript/game1.js"></script>
