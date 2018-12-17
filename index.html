@@ -1,104 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="assets/css/reset.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Bungee+Inline"
+			rel="stylesheet"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<title>Hangman Game</title>
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <title>Hangman Game</title>
-</head>
+	<body>
+		<div class="header">
+			<h1>Indiana Jones Hangman Game</h1>
+			<h2>Crack The Code To Save Indy</h2>
+			<p id="instructions">
+				Guess Letters To Figure Out The Word, Crack The Code, And Save Indy!
+			</p>
+			<p id="instructions">Press "Start Game" Button To Play!</p>
+		</div>
+		<div class="wrapper">
+			<div id="gameArea">
+				<div class="gameTimer">
+					<p><strong>Timer:</strong></p>
+					<progress value="0" max="50" id="timer"></progress>
+				</div>
+				<section class="score">
+					<p><strong>Wins: </strong></p>
+					<p id="wins"></p>
+					<p><strong>Losses: </strong></p>
+					<p id="losses"></p>
+				</section>
+				<section class="gameInfo">
+					<p><strong>Code to Crack:</strong></p>
+					<p id="word">N/A</p>
+					<p><strong>Guesses Left:</strong></p>
+					<p id="currentGuess">N/A</p>
+					<p><strong>Current Guess:</strong></p>
+					<p id="currentLetter"></p>
+					<p><strong>Incorrect Guesses:</strong></p>
+					<p id="guessesMade">N/A</p>
+				</section>
+			</div>
 
-<body>
-    <div class="header">
-      <h1>Indiana Jones Hangman Game</h1>
-      <h2>Crack The Code To Save Indy</h2>
-      <p id="instructions">Guess Letters To Figure Out The Word, Crack The Code, And Save Indy!</p>
-      <p id="instructions">Press "Start Game" Button To Play!</p>
-    </div>
+			<br />
+			<div class="buttonArea">
+				<button
+					class="gameButtons"
+					type="button"
+					name="button"
+					id="startButton"
+					onclick=""
+				>
+					Start Game
+				</button>
+				<button
+					class="gameButtons"
+					type="button"
+					name="button"
+					id="guessButton"
+					onclick=""
+				>
+					Guess Word
+				</button>
+				<button
+					class="gameButtons"
+					type="button"
+					name="button"
+					id="newWordButton"
+				>
+					Get New Word
+				</button>
+				<button
+					class="gameButtons"
+					type="button"
+					name="button"
+					onclick="location.reload()"
+					id="resetButton"
+				>
+					Reset Score
+				</button>
+			</div>
 
-    <br>
+			<!-- keyboard for mobile -->
 
-    <div class="wrapper">
-    <div class="container">
-      <div id="gameArea">
-        <div class="gameTimer">
-          <p><strong>Timer:</strong></p>
-          <progress value="0" max="50" id="timer"></progress>
-        </div>
-        <section class="score">
-          <p><strong>Wins: </strong></p>
-          <p id="wins"></p>
-          <p><strong>Losses: </strong></p>
-          <p id="losses"></p>
-        </section>
-        <section class="gameInfo">
-          <p><strong>Code to Crack:</strong></p>
-          <p id="word">N/A</p>
-          <p><strong>Guesses Left:</strong></p>
-          <p id="currentGuess">N/A</p>
-          <p><strong>Current Guess:</strong></p>
-          <p id="currentLetter"></p>
-          <p><strong>Incorrect Guesses:</strong></p>
-          <p id="guessesMade">N/A</p>
-        </section>
-      </div>
+			<div class="mobile-keyboard">
+				<div class="row">
+					<input type="button" value="q" /> <input type="button" value="w" />
+					<input type="button" value="e" /> <input type="button" value="r" />
+					<input type="button" value="t" /> <input type="button" value="y" />
+					<input type="button" value="u" /> <input type="button" value="i" />
+					<input type="button" value="o" /> <input type="button" value="p" />
+				</div>
+				<div class="row">
+					<input type="button" value="a" /> <input type="button" value="s" />
+					<input type="button" value="d" /> <input type="button" value="f" />
+					<input type="button" value="g" /> <input type="button" value="h" />
+					<input type="button" value="j" /> <input type="button" value="k" />
+					<input type="button" value="l" />
+				</div>
+				<div class="row">
+					<input type="button" value="z" /> <input type="button" value="x" />
+					<input type="button" value="c" /> <input type="button" value="v" />
+					<input type="button" value="b" /> <input type="button" value="n" />
+					<input type="button" value="m" />
+				</div>
+			</div>
+		</div>
 
-      <br>
-      <div class="buttonArea">
-      <button class="gameButtons" type="button" name="button" id="startButton" onclick="">Start Game</button>
-      <button class="gameButtons" type="button" name="button" id="guessButton" onclick="">Guess Word</button>
-      <button class="gameButtons" type="button" name="button" id="newWordButton">Get New Word</button>
-      <button class="gameButtons" type="button" name="button" onclick="location.reload()" id="resetButton">Reset Score</button>
-      </div>
-    </div>
-  <br>
+		<br />
 
-  <!-- keyboard for mobile -->
-  
-  <div class="mobile-keyboard">
-    <div class="row">
-      <input type="button" value="q">
-      <input type="button" value="w">
-      <input type="button" value="e">
-      <input type="button" value="r">
-      <input type="button" value="t">
-      <input type="button" value="y">
-      <input type="button" value="u">
-      <input type="button" value="i">
-      <input type="button" value="o">
-      <input type="button" value="p">
-    </div>
-    <div class="row">
-      <input type="button" value="a">
-      <input type="button" value="s">
-      <input type="button" value="d">
-      <input type="button" value="f">
-      <input type="button" value="g">
-      <input type="button" value="h">
-      <input type="button" value="j">
-      <input type="button" value="k">
-      <input type="button" value="l">
-    </div>
-    <div class="row">
-      <input type="button" value="z">
-      <input type="button" value="x">
-      <input type="button" value="c">
-      <input type="button" value="v">
-      <input type="button" value="b">
-      <input type="button" value="n">
-      <input type="button" value="m">
-    </div>
-  </div>
-</div>
-
-  <br>
-
-  <footer>&copyBenMercerCodes</footer>
-  <script type="text/javascript" src="assets/javascript/game1.js"></script>
-</body>
-
+		<footer>&copyBenMercerCodes</footer>
+		<script type="text/javascript" src="assets/javascript/logic.js"></script>
+	</body>
 </html>
