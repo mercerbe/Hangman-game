@@ -1,49 +1,49 @@
-html{
-  box-sizing: border-box;
-  background: url(../images/indy_bg.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+html {
+	box-sizing: border-box;
+	background: url(../images/indy_bg.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 body {
-  min-height: 100vh;
-  box-sizing: inherit;
-  position: relative;
-  color: whitesmoke;
-  text-align: center;
-  font-family: 'Bungee Inline', cursive;
+	min-height: 100vh;
+	box-sizing: inherit;
+	position: relative;
+	color: whitesmoke;
+	text-align: center;
+	font-family: "Bungee Inline", cursive;
 }
 
 .header {
-  background-color: #231f20;
-  padding: 2rem 0;
+	background-color: #231f20;
+	padding: 2rem 0;
 }
 
 .header h1 {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 
 .header h2 {
-  font-size: 1.5rem;
-  padding-bottom: 1rem;
+	font-size: 1.5rem;
+	padding-bottom: 1rem;
 }
 
 .wrapper {
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 80%;
-  margin-left: 7%;
-  padding: 3%;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 80%;
+	margin-left: 7%;
+	margin-top: 2rem;
+	padding: 3%;
 }
 
-img{
-  width: 50%;
-  height: auto;
-  border-radius: 15px;
-  margin-left: auto;
-  margin-right: auto;
-
+img {
+	width: 50%;
+	height: auto;
+	border-radius: 15px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #instructions,
@@ -54,79 +54,62 @@ img{
 #currentGuess,
 #currentLetter,
 #guessesMade {
-  color: #b1604b;
+	color: #b1604b;
 }
 
-/* .buttonArea {
-  margin-bottom: 5%;
-} */
+.buttonArea {
+	margin-bottom: 1rem;
+}
 
 .gameButtons {
-  padding: 10px 5px;
-  margin: 10px;
-  font-size: 20px;
-  font-family: 'Bungee Inline', cursive;
-  margin-left: auto;
-  margin-right: auto;
-
+	padding: 10px 5px;
+	margin: 10px;
+	font-size: 20px;
+	font-family: "Bungee Inline", cursive;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .gameButtons:hover {
-  background-color: #b1604b;
-  border: none;
-  font-family: 'Bungee Inline', cursive;
-  color: whitesmoke;
+	background-color: #b1604b;
+	border: none;
+	font-family: "Bungee Inline", cursive;
+	color: whitesmoke;
 }
 
 .row {
-  text-align:center;
-  margin:0 0 15px;
+	text-align: center;
+	margin: 0 0 15px;
 }
-input[type='button']{
-  padding:10px 20px;
-  border-radius:30px;
-  border:3px solid #231f20;
-  background:#b1604b;
-  color:#fff;
-  text-transform:uppercase;
-  /* &.shift-activated {
-    background:$activeKeyColor;
-  }
-  &.delete, &.shift {
-    text-transform:none;
-  } */
+input[type="button"] {
+	padding: 10px 20px;
+	border-radius: 30px;
+	border: 3px solid #231f20;
+	background: #b1604b;
+	color: #fff;
+	text-transform: uppercase;
 }
 
-
-.output{
-  margin:15px;
-  /* ::-webkit-input-placeholder {
-    color:white;
-    text-align:center;
-    font-size:1em; */
+.output {
+	margin: 15px;
 }
 
 .output input {
-    color:white;
-    background:black;
-    border:0px;
-    line-height:2.2em;
-    text-align:center;
-    font-size:2em;
-    width:100%;
-    /* &:focus {
-      outline:none;
-      border:0px;
-    } */
-}  
-
+	color: white;
+	background: black;
+	border: 0px;
+	line-height: 2.2em;
+	text-align: center;
+	font-size: 2em;
+	width: 100%;
+}
 
 footer {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: black;
-  color: #b1604b;
-  padding: 1% 0 1% 0;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: black;
+	color: #b1604b;
+	padding: 1% 0 1% 0;
 }
