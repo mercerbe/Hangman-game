@@ -15,15 +15,17 @@
 	</head>
 
 	<body>
+		<!-- app header -->
 		<div class="header">
 			<h1>Indiana Jones Hangman Game</h1>
 			<h2>Crack The Code To Save Indy</h2>
-			<p id="instructions">
+			<p class="instructions">
 				Guess Letters To Figure Out The Word, Crack The Code, And Save Indy!
 			</p>
-			<p id="instructions">Press "Start Game" Button To Play!</p>
+			<p class="instructions">Press "Start Game" Button To Play!</p>
 		</div>
 		<div class="wrapper">
+			<!-- score and word area -->
 			<div id="gameArea">
 				<div class="gameTimer">
 					<p><strong>Timer:</strong></p>
@@ -47,7 +49,8 @@
 				</section>
 			</div>
 
-			<br />
+			<!-- game buttons -->
+
 			<div class="buttonArea">
 				<button
 					class="gameButtons"
@@ -112,7 +115,16 @@
 			</div>
 		</div>
 
-		<br />
+		<!-- end of round modal -->
+		<!-- The Modal -->
+		<div id="myModal" class="modal" hidden="hidden">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p id="roundInfo"></p>
+				<img src="" alt="" id="roundImage" />
+			</div>
+		</div>
 
 		<footer>&copyBenMercerCodes</footer>
 		<script type="text/javascript" src="assets/javascript/logic.js"></script>

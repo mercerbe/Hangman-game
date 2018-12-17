@@ -46,7 +46,7 @@ img {
 	margin-right: auto;
 }
 
-#instructions,
+.instructions,
 #timer,
 #wins,
 #losses,
@@ -68,6 +68,7 @@ img {
 	font-family: "Bungee Inline", cursive;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: whitesmoke;
 }
 
 .gameButtons:hover {
@@ -112,4 +113,11 @@ footer {
 	background-color: black;
 	color: #b1604b;
 	padding: 1% 0 1% 0;
+}
+
+/* mobile media queries */
+@media only screen and (max-width: 600px) {
+	.gameButtons {
+		font-size: 12px;
+	}
 }
