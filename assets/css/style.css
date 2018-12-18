@@ -91,6 +91,12 @@ input[type="button"] {
 	text-transform: uppercase;
 }
 
+input[type="button"]:hover {
+	background-color: whitesmoke;
+	color: #231f20;
+	border: 3px solid #b1604b;
+}
+
 .output {
 	margin: 15px;
 }

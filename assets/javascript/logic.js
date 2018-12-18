@@ -9,14 +9,17 @@ var chosenWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 var allowedGuesses = Math.trunc(chosenWord.length * 2);
 var correctGuesses;
 var wrongGuesses;
-var timeleft = 100;
+var time = 100;
 
 //Elements
+//word elements on dom
 var wordElement = document.getElementById("word");
 var letterCountElement = document.getElementById("currentGuess");
 var lettersGuessedElement = document.getElementById("guessesMade");
+//score tracking
 document.getElementById("wins").innerHTML = wins;
 document.getElementById("losses").innerHTML = losses;
+//cursors for buttons
 startButton.addEventListener("click", startGame, timer, false);
 startButton.style.cursor = "pointer";
 guessButton.addEventListener("click", guessWord, false);
@@ -24,14 +27,19 @@ guessButton.style.cursor = "pointer";
 newWordButton.addEventListener("click", startGame, false);
 newWordButton.style.cursor = "pointer";
 resetButton.style.cursor = "pointer";
-document.getElementById("timer").innerHTML = timer;
+document.getElementById("guessButton").setAttribute("disabled", "disabled");
+//timer
+var seconds = 60;
+var timer;
 
 //Functions
 function startGame() {
+	document.getElementById("guessButton").removeAttribute("disabled");
 	chosenWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 	allowedGuesses = Math.trunc(chosenWord.length * 2);
 	wrongGuesses = [];
 	correctGuesses = [];
+	document.getElementById("timer").innerHTML = "1:00";
 	console.log(chosenWord);
 	console.log(allowedGuesses);
 	console.log(correctGuesses);
@@ -42,11 +50,27 @@ function startGame() {
 
 	wordElement.innerHTML = correctGuesses.join(" ");
 	letterCountElement.innerHTML = allowedGuesses;
+	if (!timer) {
+		timer = window.setInterval(function() {
+			gameTimer();
+		}, 1000); // every second
+	}
+	gameTimer();
+}
 
-	var downloadTimer = setInterval(function timer() {
-		document.getElementById("timer").value = 100 - --timeleft;
-		if (timeleft <= 0) clearInterval(downloadTimer);
-	}, 1000);
+function gameTimer() {
+	if (seconds < 60) {
+		// I want it to say 1:00, not 60
+		document.getElementById("timer").innerHTML = `:${seconds}`;
+	}
+	if (seconds > 0) {
+		// so it doesn't go to -1
+		seconds--;
+	} else {
+		clearInterval(timer);
+		alert("out of time!");
+		seconds = 60;
+	}
 }
 
 function updateGuesses(letter) {
@@ -75,6 +99,7 @@ function checkWin() {
 		setTimeout(function() {
 			alert("Correct! Indy Escaped With The Artifact!");
 		}, 300);
+		seconds = 60;
 		wins++;
 		document.getElementById("wins").innerHTML = wins;
 		startGame();
@@ -83,6 +108,7 @@ function checkWin() {
 		setTimeout(function() {
 			alert("Out Of Guesses! Indy Didn't Escape!");
 		}, 300);
+		seconds = 60;
 		losses++;
 		document.getElementById("losses").innerHTML = losses;
 		startGame();
@@ -92,12 +118,14 @@ function checkWin() {
 function guessWord() {
 	var wordGuess = prompt("What's the Word?");
 	if (wordGuess === chosenWord) {
-		window.confirm("Correct! Code Cracked and Indy Escaped!");
+		alert("Correct! Code Cracked and Indy Escaped!");
+		seconds = 60;
 		wins++;
 		document.getElementById("wins").innerHTML = wins;
 		startGame();
 	} else {
-		window.confirm("Incorrect! Indy Didn't Escape With The Artifact!");
+		alert("Incorrect! Indy Didn't Escape With The Artifact!");
+		seconds = 60;
 		losses++;
 		document.getElementById("losses").innerHTML = losses;
 		startGame();
